@@ -10,14 +10,6 @@ GoRouter routes() {
         builder: (BuildContext context, GoRouterState state) {
           return const HomePage();
         },
-        routes: const <RouteBase>[
-          // GoRoute(
-          //   path: 'details',
-          //   builder: (BuildContext context, GoRouterState state) {
-          //     return const DetailsScreen();
-          //   },
-          // ),
-        ],
       ),
     ],
   );

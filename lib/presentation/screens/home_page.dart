@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   late AnimationController _controller;
   late Animation<Color?> _colorAnimation;
-  late Animation<Color?> _fontColorAnimation; 
+  late Animation<Color?> _fontColorAnimation;
 
   @override
   void initState() {
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
         Positioned(
           top: 80.r,
-          left: MediaQuery.of(context).size.width/2.5,
+          left: MediaQuery.of(context).size.width / 2.5,
           child: Container(
             height: 180.r,
             width: 160.r,
@@ -289,146 +289,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
                 SizedBox(height: 20.h),
                 Expanded(
-                  // child: ListView.builder(
-                  //   physics: const FixedExtentScrollPhysics(),
-                  //   controller: _scrollController,
-                  //   scrollDirection: Axis.vertical,
-                  //   itemCount: 3,
-                  //   itemBuilder: (context, index) => Align(
-                  //     alignment: Alignment.topCenter,
-                  //     child: SizedBox(
-                  //       height: 340.h,
-                  //       child: Container(
-                  //         margin: EdgeInsets.symmetric(horizontal: 20.w),
-                  //         padding: EdgeInsets.all(20.r),
-                  //         decoration: BoxDecoration(
-                  //           color: Constants.kcCard,
-                  //           borderRadius: BorderRadius.circular(20.r),
-                  //         ),
-                  //         child: Column(
-                  //           children: [
-                  //             Text(
-                  //               "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
-                  //               style: TextStyle(
-                  //                 fontSize: 24.sp,
-                  //                 color: Constants.kcTextTwo,
-                  //                 fontWeight: FontWeight.w600,
-                  //                 letterSpacing: -2,
-                  //               ),
-                  //             ),
-                  //             SizedBox(height: 14.h),
-                  //             Text(
-                  //               "The insights platform Kaiko warned that the market may enter into a period...",
-                  //               style: TextStyle(
-                  //                 fontSize: 20.sp,
-                  //                 color: Constants.kcTextThree,
-                  //                 fontWeight: FontWeight.w300,
-                  //                 letterSpacing: -1,
-                  //               ),
-                  //             ),
-                  //             SizedBox(height: 38.h),
-                  //             Row(
-                  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //               children: [
-                  //                 Text(
-                  //                   "Steven Walgenbach",
-                  //                   style: TextStyle(
-                  //                     fontSize: 18.sp,
-                  //                     color: Constants.kcTextTwo,
-                  //                     fontWeight: FontWeight.w500,
-                  //                     letterSpacing: -1,
-                  //                   ),
-                  //                 ),
-                  //                 Text(
-                  //                   "July 19, 2023",
-                  //                   style: TextStyle(
-                  //                     fontSize: 18.sp,
-                  //                     color: Constants.kcTextThree,
-                  //                     fontWeight: FontWeight.w300,
-                  //                     letterSpacing: -1,
-                  //                   ),
-                  //                 ),
-                  //               ],
-                  //             ),
-                  //             Divider(
-                  //               height: 46.h,
-                  //               thickness: 0.25.sp,
-                  //               color: Constants.kcTextThree,
-                  //             ),
-                  //             Row(
-                  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //               children: [
-                  //                 Row(
-                  //                   children: [
-                  //                     Icon(
-                  //                       Icons.visibility,
-                  //                       color: Constants.kcTextThree,
-                  //                       size: 20.sp,
-                  //                     ),
-                  //                     SizedBox(width: 5.w),
-                  //                     Text(
-                  //                       "780",
-                  //                       style: TextStyle(
-                  //                         fontSize: 16.sp,
-                  //                         color: Constants.kcTextThree,
-                  //                       ),
-                  //                     ),
-                  //                   ],
-                  //                 ),
-                  //                 Row(
-                  //                   children: [
-                  //                     Container(
-                  //                       height: 46.h,
-                  //                       padding: EdgeInsets.all(12.r),
-                  //                       decoration: const BoxDecoration(
-                  //                         color: Constants.kcSecondary,
-                  //                         shape: BoxShape.circle,
-                  //                       ),
-                  //                       child: Image.asset('assets/images/share.png'),
-                  //                     ),
-                  //                     SizedBox(width: 10.w),
-                  //                     Container(
-                  //                       height: 46.h,
-                  //                       padding: EdgeInsets.all(12.r),
-                  //                       decoration: BoxDecoration(
-                  //                           color: Constants.kcSecondary,
-                  //                           borderRadius:
-                  //                               BorderRadius.circular(20.r)),
-                  //                       child: Row(
-                  //                         children: [
-                  //                           Image.asset('assets/images/comment.png'),
-                  //                           SizedBox(width: 5.w),
-                  //                           Text(
-                  //                             "12",
-                  //                             style: TextStyle(
-                  //                               fontSize: 14.sp,
-                  //                               color: Constants.kcTextTwo,
-                  //                               fontWeight: FontWeight.bold,
-                  //                             ),
-                  //                           ),
-                  //                         ],
-                  //                       ),
-                  //                     ),
-                  //                     SizedBox(width: 10.w),
-                  //                     Container(
-                  //                       height: 46.h,
-                  //                       padding: EdgeInsets.all(12.r),
-                  //                       decoration: const BoxDecoration(
-                  //                         color: Constants.kcSecondary,
-                  //                         shape: BoxShape.circle,
-                  //                       ),
-                  //                       child: Image.asset('assets/images/like.png'),
-                  //                     ),
-                  //                   ],
-                  //                 )
-                  //               ],
-                  //             ),
-                  //           ],
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                   child: NotificationListener<ScrollNotification>(
                     onNotification: (notification) {
                       if (notification is ScrollUpdateNotification) {
@@ -453,149 +313,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         final currentFontColor = index == currentIndex
                             ? _fontColorAnimation.value
                             : Constants.kcTextOne;
-                        // return Container(
-                        //   margin: EdgeInsets.only(bottom: 20.h),
-                        //   height: 380, // Height of each container
-                        //   // color: index == currentIndex
-                        //   //     ? Colors.amber
-                        //   //     : Colors.white24,
-                        //   color: currentColor,
-                        //   // child: Center(child: Text(titles[index])),
-                        // );
-                        return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
-                          padding: EdgeInsets.all(20.r),
-                          decoration: BoxDecoration(
-                            // color: Constants.kcCard,
-                            color: currentColor,
-                            borderRadius: BorderRadius.circular(20.r),
-                          ),
-                          child: Column(
-                            children: [
-                              Text(
-                                "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
-                                style: TextStyle(
-                                  fontSize: 24.sp,
-                                  color: currentFontColor,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: -2,
-                                ),
-                              ),
-                              SizedBox(height: 14.h),
-                              Text(
-                                "The insights platform Kaiko warned that the market may enter into a period...",
-                                style: TextStyle(
-                                  fontSize: 18.sp,
-                                  color: currentFontColor!.withOpacity(0.7),
-                                  fontWeight: FontWeight.w300,
-                                  letterSpacing: -1,
-                                ),
-                              ),
-                              SizedBox(height: 36.h),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "Steven Walgenbach",
-                                    style: TextStyle(
-                                      fontSize: 18.sp,
-                                      color: currentFontColor,
-                                      fontWeight: FontWeight.w500,
-                                      letterSpacing: -1,
-                                    ),
-                                  ),
-                                  Text(
-                                    "July 19, 2023",
-                                    style: TextStyle(
-                                      fontSize: 16.sp,
-                                      color: currentFontColor,
-                                      fontWeight: FontWeight.w300,
-                                      letterSpacing: -1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 4.h),
-                              Divider(
-                                height: 36.h,
-                                thickness: 0.2.sp,
-                                color: currentFontColor,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.visibility,
-                                        color: currentFontColor.withOpacity(0.7),
-                                        size:  16.sp,
-                                      ),
-                                      SizedBox(width: 5.w),
-                                      Text(
-                                        "780",
-                                        style: TextStyle(
-                                          fontSize: 14.sp,
-                                          color: currentFontColor.withOpacity(0.7),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        height: 46.h,
-                                        padding: EdgeInsets.all(12.r),
-                                        decoration: const BoxDecoration(
-                                          color: Constants.kcSecondary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.asset(
-                                            'assets/images/share.png'),
-                                      ),
-                                      SizedBox(width: 10.w),
-                                      Container(
-                                        height: 46.h,
-                                        padding: EdgeInsets.all(12.r),
-                                        decoration: BoxDecoration(
-                                            color: Constants.kcSecondary,
-                                            borderRadius:
-                                                BorderRadius.circular(30.r)),
-                                        child: Row(
-                                          children: [
-                                            Image.asset(
-                                                'assets/images/comment.png'),
-                                            SizedBox(width: 5.w),
-                                            Text(
-                                              "12",
-                                              style: TextStyle(
-                                                fontSize: 14.sp,
-                                                color: Constants.kcTextTwo,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(width: 10.w),
-                                      Container(
-                                        height: 46.h,
-                                        padding: EdgeInsets.all(12.r),
-                                        decoration: const BoxDecoration(
-                                          color: Constants.kcSecondary,
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.asset(
-                                            'assets/images/like.png'),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
+                        return NewsCard(
+                          currentColor: currentColor,
+                          currentFontColor: currentFontColor,
+                          data: newsList[index],
                         );
                       },
                     ),
@@ -606,6 +327,197 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ),
       ],
+    );
+  }
+}
+
+class NewsCardData {
+  const NewsCardData({
+    required this.title,
+    required this.bodyText,
+    required this.author,
+    required this.date,
+    required this.viewCount,
+    required this.messageCount,
+  });
+
+  final String title;
+  final String bodyText;
+  final String author;
+  final String date;
+  final String viewCount;
+  final String messageCount;
+}
+
+final List<NewsCardData> newsList = [
+  const NewsCardData(
+    title: "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
+    bodyText: "The insights platform Kaiko warned that the market may enter into a period...",
+    author: "Steven Walgenbach",
+    date: "July 19, 2023",
+    viewCount: "780",
+    messageCount: "12",
+  ),
+  const NewsCardData(
+    title: "Bitcoin Reigns, Dominates 99% of Inflows in Cryptocurrency Investments",
+    bodyText: "Bitcoin's dominance: captures 99% of inflows in cryptocurrency..",
+    author: "Vignesh Karunanidhi",
+    date: "July 19,2023",
+    viewCount: "640",
+    messageCount: "17",
+  ),
+  const NewsCardData(
+    title: "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
+    bodyText: "The insights platform Kaiko warned that the market may enter into a period...",
+    author: "Steven Walgenbach",
+    date: "July 19, 2023",
+    viewCount: "780",
+    messageCount: "12",
+  ),
+];
+
+class NewsCard extends StatelessWidget {
+  const NewsCard({
+    super.key,
+    required this.currentColor,
+    required this.currentFontColor,
+    required this.data,
+  });
+
+  final Color? currentColor;
+  final Color? currentFontColor;
+  final NewsCardData data;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        // color: Constants.kcCard,
+        color: currentColor,
+        borderRadius: BorderRadius.circular(20.r),
+      ),
+      child: Column(
+        children: [
+          Text(
+            "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
+            style: TextStyle(
+              fontSize: 24.sp,
+              color: currentFontColor,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -2,
+            ),
+          ),
+          SizedBox(height: 14.h),
+          Text(
+            "The insights platform Kaiko warned that the market may enter into a period...",
+            style: TextStyle(
+              fontSize: 18.sp,
+              color: currentFontColor!.withOpacity(0.7),
+              fontWeight: FontWeight.w300,
+              letterSpacing: -1,
+            ),
+          ),
+          SizedBox(height: 36.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Steven Walgenbach",
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  color: currentFontColor,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: -1,
+                ),
+              ),
+              Text(
+                "July 19, 2023",
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: currentFontColor,
+                  fontWeight: FontWeight.w300,
+                  letterSpacing: -1,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 4.h),
+          Divider(
+            height: 36.h,
+            thickness: 0.2.sp,
+            color: currentFontColor,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.visibility,
+                    color: currentFontColor!.withOpacity(0.7),
+                    size: 16.sp,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text(
+                    "780",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      color: currentFontColor!.withOpacity(0.7),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: 46.h,
+                    padding: EdgeInsets.all(12.r),
+                    decoration: const BoxDecoration(
+                      color: Constants.kcSecondary,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset('assets/images/share.png'),
+                  ),
+                  SizedBox(width: 10.w),
+                  Container(
+                    height: 46.h,
+                    padding: EdgeInsets.all(12.r),
+                    decoration: BoxDecoration(
+                        color: Constants.kcSecondary,
+                        borderRadius: BorderRadius.circular(30.r)),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/images/comment.png'),
+                        SizedBox(width: 5.w),
+                        Text(
+                          "12",
+                          style: TextStyle(
+                            fontSize: 14.sp,
+                            color: Constants.kcTextTwo,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 10.w),
+                  Container(
+                    height: 46.h,
+                    padding: EdgeInsets.all(12.r),
+                    decoration: const BoxDecoration(
+                      color: Constants.kcSecondary,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset('assets/images/like.png'),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
