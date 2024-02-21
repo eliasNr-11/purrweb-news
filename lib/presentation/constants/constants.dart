@@ -14,4 +14,8 @@ class Constants {
   static const Color kcTextThree= Color(0xFF5D5D5D);
 
   static const String userProfile = 'assets/images/user.jpeg';
+  static const String search = 'assets/images/search.png';
+  static const String share = 'assets/images/share.png';
+  static const String comment = 'assets/images/comment.png';
+  static const String like = 'assets/images/like.png';
 }

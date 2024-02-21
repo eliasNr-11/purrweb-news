@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pureweb_news/data/models/news_card_model.dart';
 import 'package:pureweb_news/presentation/constants/constants.dart';
+import 'package:pureweb_news/presentation/widgets/custom_scroll_physics.dart';
+import 'package:pureweb_news/presentation/widgets/home_menus.dart';
+import 'package:pureweb_news/presentation/widgets/news_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  // final PageController _pageController = PageController(viewportFraction: 1);
   final FixedExtentScrollController _scrollController =
       FixedExtentScrollController();
 
@@ -202,7 +205,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             letterSpacing: -6),
                       ),
                       Image.asset(
-                        'assets/images/search.png',
+                        Constants.search,
                         height: 30.r,
                         width: 30.r,
                         color: Constants.kcTextOne,
@@ -217,71 +220,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Row(
                       children: [
-                        Container(
-                          height: 46.h,
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30.w),
-                              color: Colors.white12),
-                          child: Icon(
-                            Icons.bookmark_rounded,
-                            size: 28.sp,
-                          ),
+                        const HomeMenus(
+                          isBookmark: true,
+                          isSelected: false,
                         ),
                         SizedBox(width: 10.w),
-                        Container(
-                          height: 46.h,
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30.w),
-                              color: Constants.kcSecondary),
-                          child: Center(
-                            child: Text(
-                              'My Feed',
-                              style: TextStyle(
-                                color: Constants.kcTextTwo,
-                                fontSize: 20.sp,
-                                letterSpacing: -1,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
+                        const HomeMenus(
+                          isBookmark: false,
+                          isSelected: true,
+                          name: 'My Feed',
                         ),
                         SizedBox(width: 10.w),
-                        Container(
-                          height: 46.h,
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30.w),
-                            color: Colors.white12,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Latest news',
-                              style: TextStyle(
-                                fontSize: 20.sp,
-                                letterSpacing: -1,
-                              ),
-                            ),
-                          ),
+                        const HomeMenus(
+                          isBookmark: false,
+                          isSelected: false,
+                          name: 'Latest news',
                         ),
                         SizedBox(width: 10.w),
-                        Container(
-                          height: 46.h,
-                          padding: EdgeInsets.symmetric(horizontal: 16.w),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30.w),
-                            color: Colors.white12,
-                          ),
-                          child: Center(
-                            child: Text(
-                              'Bitcoin news',
-                              style: TextStyle(
-                                fontSize: 20.sp,
-                                letterSpacing: -1,
-                              ),
-                            ),
-                          ),
+                        const HomeMenus(
+                          isBookmark: false,
+                          isSelected: false,
+                          name: 'Bitcoin news',
                         ),
                       ],
                     ),
@@ -305,7 +264,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     child: ListView.builder(
                       physics:
                           const SnapToItemScrollPhysics(), // Custom scroll physics
-                      itemCount: 3,
+                      itemCount: newsList.length,
                       itemBuilder: (context, index) {
                         final currentColor = index == currentIndex
                             ? _colorAnimation.value
@@ -328,224 +287,5 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
       ],
     );
-  }
-}
-
-class NewsCardData {
-  const NewsCardData({
-    required this.title,
-    required this.bodyText,
-    required this.author,
-    required this.date,
-    required this.viewCount,
-    required this.messageCount,
-  });
-
-  final String title;
-  final String bodyText;
-  final String author;
-  final String date;
-  final String viewCount;
-  final String messageCount;
-}
-
-final List<NewsCardData> newsList = [
-  const NewsCardData(
-    title: "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
-    bodyText: "The insights platform Kaiko warned that the market may enter into a period...",
-    author: "Steven Walgenbach",
-    date: "July 19, 2023",
-    viewCount: "780",
-    messageCount: "12",
-  ),
-  const NewsCardData(
-    title: "Bitcoin Reigns, Dominates 99% of Inflows in Cryptocurrency Investments",
-    bodyText: "Bitcoin's dominance: captures 99% of inflows in cryptocurrency..",
-    author: "Vignesh Karunanidhi",
-    date: "July 19,2023",
-    viewCount: "640",
-    messageCount: "17",
-  ),
-  const NewsCardData(
-    title: "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
-    bodyText: "The insights platform Kaiko warned that the market may enter into a period...",
-    author: "Steven Walgenbach",
-    date: "July 19, 2023",
-    viewCount: "780",
-    messageCount: "12",
-  ),
-];
-
-class NewsCard extends StatelessWidget {
-  const NewsCard({
-    super.key,
-    required this.currentColor,
-    required this.currentFontColor,
-    required this.data,
-  });
-
-  final Color? currentColor;
-  final Color? currentFontColor;
-  final NewsCardData data;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        // color: Constants.kcCard,
-        color: currentColor,
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Column(
-        children: [
-          Text(
-            "BTC's Hash Rate Up More Than 600% In Two Years: CryptoQuant CEO",
-            style: TextStyle(
-              fontSize: 24.sp,
-              color: currentFontColor,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -2,
-            ),
-          ),
-          SizedBox(height: 14.h),
-          Text(
-            "The insights platform Kaiko warned that the market may enter into a period...",
-            style: TextStyle(
-              fontSize: 18.sp,
-              color: currentFontColor!.withOpacity(0.7),
-              fontWeight: FontWeight.w300,
-              letterSpacing: -1,
-            ),
-          ),
-          SizedBox(height: 36.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Steven Walgenbach",
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  color: currentFontColor,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: -1,
-                ),
-              ),
-              Text(
-                "July 19, 2023",
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: currentFontColor,
-                  fontWeight: FontWeight.w300,
-                  letterSpacing: -1,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 4.h),
-          Divider(
-            height: 36.h,
-            thickness: 0.2.sp,
-            color: currentFontColor,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    Icons.visibility,
-                    color: currentFontColor!.withOpacity(0.7),
-                    size: 16.sp,
-                  ),
-                  SizedBox(width: 5.w),
-                  Text(
-                    "780",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: currentFontColor!.withOpacity(0.7),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    height: 46.h,
-                    padding: EdgeInsets.all(12.r),
-                    decoration: const BoxDecoration(
-                      color: Constants.kcSecondary,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset('assets/images/share.png'),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    height: 46.h,
-                    padding: EdgeInsets.all(12.r),
-                    decoration: BoxDecoration(
-                        color: Constants.kcSecondary,
-                        borderRadius: BorderRadius.circular(30.r)),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/comment.png'),
-                        SizedBox(width: 5.w),
-                        Text(
-                          "12",
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Constants.kcTextTwo,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    height: 46.h,
-                    padding: EdgeInsets.all(12.r),
-                    decoration: const BoxDecoration(
-                      color: Constants.kcSecondary,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset('assets/images/like.png'),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class SnapToItemScrollPhysics extends ScrollPhysics {
-  const SnapToItemScrollPhysics({ScrollPhysics? parent})
-      : super(parent: parent);
-
-  @override
-  SnapToItemScrollPhysics applyTo(ScrollPhysics? ancestor) {
-    return SnapToItemScrollPhysics(parent: buildParent(ancestor));
-  }
-
-  @override
-  Simulation? createBallisticSimulation(
-      ScrollMetrics position, double velocity) {
-    // Determine the current scroll position
-    final pixels = position.pixels;
-
-    // Determine the target index based on the current scroll position
-    final targetIndex = (pixels / 340).round();
-
-    // Calculate the target scroll position to snap the target index to the top
-    final targetPixels = targetIndex * 340.toDouble();
-
-    // Return a ScrollSpringSimulation to simulate the snapping behavior
-    return ScrollSpringSimulation(spring, pixels, targetPixels, velocity,
-        tolerance: tolerance);
-    // return super.createBallisticSimulation(position, velocity);
   }
 }
