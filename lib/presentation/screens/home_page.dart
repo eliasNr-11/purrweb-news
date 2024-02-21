@@ -268,7 +268,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       itemBuilder: (context, index) {
                         final currentColor = index == currentIndex
                             ? _colorAnimation.value
-                            : Colors.white24;
+                            : Colors.white12;
                         final currentFontColor = index == currentIndex
                             ? _fontColorAnimation.value
                             : Constants.kcTextOne;
