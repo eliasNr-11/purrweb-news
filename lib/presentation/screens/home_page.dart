@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             backgroundColor: Colors.transparent,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
+              surfaceTintColor: Colors.transparent,
               toolbarHeight: 70.h,
               leading: Center(
                 child: Stack(
