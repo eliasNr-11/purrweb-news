@@ -26,6 +26,10 @@ flutter:
   assets:
     - assets/images/user.jpeg
     - assets/images/search.png
+    - assets/images/bookmark.png
+    - assets/images/comment.png
+    - assets/images/like.png
+    - assets/images/share.png
 
   fonts:
     - family: Poppins
