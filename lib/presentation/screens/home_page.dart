@@ -101,6 +101,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
+              surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.transparent,
               toolbarHeight: 70.h,
               leading: Center(
@@ -261,23 +262,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       }
                       return false;
                     },
-                    child: ListView.builder(
-                      physics:
-                          const SnapToItemScrollPhysics(), // Custom scroll physics
-                      itemCount: newsList.length,
-                      itemBuilder: (context, index) {
-                        final currentColor = index == currentIndex
-                            ? _colorAnimation.value
-                            : Colors.white12;
-                        final currentFontColor = index == currentIndex
-                            ? _fontColorAnimation.value
-                            : Constants.kcTextOne;
-                        return NewsCard(
-                          currentColor: currentColor,
-                          currentFontColor: currentFontColor,
-                          data: newsList[index],
+                    child: AnimatedBuilder(
+                      animation: _scrollController,
+                      builder: (context, child) {
+                        return ListView.builder(
+                          physics:
+                              const CustomScrollPhysics(), // Custom scroll physics
+                          itemCount: newsList.length,
+                          itemBuilder: (context, index) {
+                            final currentColor = index == currentIndex
+                                ? _colorAnimation.value
+                                : Colors.white12;
+                            final currentFontColor = index == currentIndex
+                                ? _fontColorAnimation.value
+                                : Constants.kcTextOne;
+                            return NewsCard(
+                              currentColor: currentColor,
+                              currentFontColor: currentFontColor,
+                              data: newsList[index],
+                            );
+                          },
                         );
-                      },
+                      }
                     ),
                   ),
                 ),

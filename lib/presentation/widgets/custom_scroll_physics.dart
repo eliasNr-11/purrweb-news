@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SnapToItemScrollPhysics extends ScrollPhysics {
-  const SnapToItemScrollPhysics({ScrollPhysics? parent})
-      : super(parent: parent);
+class CustomScrollPhysics extends ScrollPhysics {
+  const CustomScrollPhysics({super.parent});
 
   @override
-  SnapToItemScrollPhysics applyTo(ScrollPhysics? ancestor) {
-    return SnapToItemScrollPhysics(parent: buildParent(ancestor));
+  CustomScrollPhysics applyTo(ScrollPhysics? ancestor) {
+    return CustomScrollPhysics(parent: buildParent(ancestor));
   }
 
   @override
