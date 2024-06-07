@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pureweb_news/presentation/constants/constants.dart';
+import 'package:purrweb_news/presentation/constants/constants.dart';
 
 class HomeMenus extends StatelessWidget {
   const HomeMenus({
@@ -23,11 +23,12 @@ class HomeMenus extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.w),
           color: isSelected ? Constants.kcSecondary : Colors.white12),
       child: isBookmark
-          ? Icon(
-              Icons.bookmark_rounded,
-              size: 28.sp,
-              color: isSelected ? Constants.kcTextTwo : Constants.kcTextOne,
-            )
+          // ? Icon(
+          //     Icons.bookmark_rounded,
+          //     size: 28.sp,
+          //     color: isSelected ? Constants.kcTextTwo : Constants.kcTextOne,
+          //   )
+          ? Image.asset('assets/images/bookmark.png', width: 28.r, color: Constants.kcTextOne,)
           : Center(
               child: Text(
                 name!,

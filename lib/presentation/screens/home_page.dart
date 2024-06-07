@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pureweb_news/data/models/news_card_model.dart';
-import 'package:pureweb_news/presentation/constants/constants.dart';
-import 'package:pureweb_news/presentation/widgets/custom_scroll_physics.dart';
-import 'package:pureweb_news/presentation/widgets/home_menus.dart';
-import 'package:pureweb_news/presentation/widgets/news_card.dart';
+import 'package:purrweb_news/data/models/news_card_model.dart';
+import 'package:purrweb_news/presentation/constants/constants.dart';
+import 'package:purrweb_news/presentation/widgets/custom_scroll_physics.dart';
+import 'package:purrweb_news/presentation/widgets/home_menus.dart';
+import 'package:purrweb_news/presentation/widgets/news_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

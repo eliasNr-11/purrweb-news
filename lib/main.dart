@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pureweb_news/presentation/constants/constants.dart';
-import 'package:pureweb_news/presentation/routes.dart';
+import 'package:purrweb_news/presentation/constants/constants.dart';
+import 'package:purrweb_news/presentation/routes.dart';
 
 void main() {
   runApp(const MainApp());
