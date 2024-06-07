@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pureweb_news/data/models/news_card_model.dart';
-import 'package:pureweb_news/presentation/constants/constants.dart';
+import 'package:purrweb_news/data/models/news_card_model.dart';
+import 'package:purrweb_news/presentation/constants/constants.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard({
@@ -32,7 +32,7 @@ class NewsCard extends StatelessWidget {
               fontSize: 24.sp,
               color: currentFontColor,
               fontWeight: FontWeight.w600,
-              letterSpacing: -2,
+              letterSpacing: -1.6.r,
             ),
           ),
           SizedBox(height: 14.h),
@@ -42,7 +42,7 @@ class NewsCard extends StatelessWidget {
               fontSize: 18.sp,
               color: currentFontColor!.withOpacity(0.7),
               fontWeight: FontWeight.w300,
-              letterSpacing: -1,
+              letterSpacing: -1.r,
             ),
           ),
           SizedBox(height: 36.h),
@@ -55,7 +55,7 @@ class NewsCard extends StatelessWidget {
                   fontSize: 18.sp,
                   color: currentFontColor,
                   fontWeight: FontWeight.w500,
-                  letterSpacing: -1,
+                  letterSpacing: -1.r,
                 ),
               ),
               Text(
@@ -64,7 +64,7 @@ class NewsCard extends StatelessWidget {
                   fontSize: 16.sp,
                   color: currentFontColor,
                   fontWeight: FontWeight.w300,
-                  letterSpacing: -1,
+                  letterSpacing: -1.r,
                 ),
               ),
             ],
