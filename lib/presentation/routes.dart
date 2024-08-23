@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pureweb_news/presentation/screens/home_page.dart';
+import 'package:purrweb_news/presentation/screens/home_page.dart';
 
 GoRouter routes() {
   return GoRouter(

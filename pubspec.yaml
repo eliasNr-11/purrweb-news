@@ -1,4 +1,4 @@
-name: pureweb_news
+name: purrweb_news
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -10,15 +10,15 @@ dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.3
-  flutter_screenutil: ^5.9.0
-  get_it: ^7.6.7
-  go_router: ^13.0.1
+  flutter_bloc: ^8.1.5
+  flutter_screenutil: ^5.9.1
+  get_it: ^7.7.0
+  go_router: ^14.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true

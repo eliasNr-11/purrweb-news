@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pureweb_news/data/models/news_card_model.dart';
-import 'package:pureweb_news/presentation/constants/constants.dart';
-import 'package:pureweb_news/presentation/widgets/custom_scroll_physics.dart';
-import 'package:pureweb_news/presentation/widgets/home_menus.dart';
-import 'package:pureweb_news/presentation/widgets/news_card.dart';
+import 'package:purrweb_news/data/models/news_card_model.dart';
+import 'package:purrweb_news/presentation/constants/constants.dart';
+import 'package:purrweb_news/presentation/widgets/custom_scroll_physics.dart';
+import 'package:purrweb_news/presentation/widgets/home_menus.dart';
+import 'package:purrweb_news/presentation/widgets/news_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -101,6 +101,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
+              surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.transparent,
               surfaceTintColor: Colors.transparent,
               toolbarHeight: 70.h,
@@ -253,7 +254,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     onNotification: (notification) {
                       if (notification is ScrollUpdateNotification) {
                         final newIndex =
-                            (notification.metrics.pixels / 400).round();
+                            (notification.metrics.pixels / 340).round();
                         if (newIndex != currentIndex) {
                           currentIndex = newIndex;
                           _controller.reset(); // Reset animation
@@ -262,23 +263,28 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       }
                       return false;
                     },
-                    child: ListView.builder(
-                      physics:
-                          const SnapToItemScrollPhysics(), // Custom scroll physics
-                      itemCount: newsList.length,
-                      itemBuilder: (context, index) {
-                        final currentColor = index == currentIndex
-                            ? _colorAnimation.value
-                            : Colors.white12;
-                        final currentFontColor = index == currentIndex
-                            ? _fontColorAnimation.value
-                            : Constants.kcTextOne;
-                        return NewsCard(
-                          currentColor: currentColor,
-                          currentFontColor: currentFontColor,
-                          data: newsList[index],
+                    child: AnimatedBuilder(
+                      animation: _scrollController,
+                      builder: (context, child) {
+                        return ListView.builder(
+                          physics:
+                              const CustomScrollPhysics(), // Custom scroll physics
+                          itemCount: newsList.length,
+                          itemBuilder: (context, index) {
+                            final currentColor = index == currentIndex
+                                ? _colorAnimation.value
+                                : Colors.white12;
+                            final currentFontColor = index == currentIndex
+                                ? _fontColorAnimation.value
+                                : Constants.kcTextOne;
+                            return NewsCard(
+                              currentColor: currentColor,
+                              currentFontColor: currentFontColor,
+                              data: newsList[index],
+                            );
+                          },
                         );
-                      },
+                      }
                     ),
                   ),
                 ),

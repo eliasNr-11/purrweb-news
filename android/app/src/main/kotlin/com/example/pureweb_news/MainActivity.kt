@@ -1,6 +1,5 @@
-package com.example.pureweb_news
+package com.example.purrweb_news
 
 import io.flutter.embedding.android.FlutterActivity
 
-class MainActivity: FlutterActivity() {
-}
+class MainActivity: FlutterActivity()
