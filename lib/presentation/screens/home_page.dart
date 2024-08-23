@@ -253,7 +253,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     onNotification: (notification) {
                       if (notification is ScrollUpdateNotification) {
                         final newIndex =
-                            (notification.metrics.pixels / 400).round();
+                            (notification.metrics.pixels / 340).round();
                         if (newIndex != currentIndex) {
                           currentIndex = newIndex;
                           _controller.reset(); // Reset animation
